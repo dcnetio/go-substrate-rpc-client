@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/centrifuge/go-substrate-rpc-client/v4/scale"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/scale"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types/codec"
 )
 
 // DefaultGenericSignedBlock is the SignedBlock with defaults for the generic types:
@@ -138,6 +138,7 @@ func (e *Extrinsic[A, S, P]) GetCall() types.Call {
 }
 
 // UnmarshalJSON fills Extrinsic with the JSON encoded byte array given by bz
+//
 //nolint:revive
 func (e *Extrinsic[A, S, P]) UnmarshalJSON(bz []byte) error {
 	var tmp string
@@ -176,18 +177,21 @@ func (e *Extrinsic[A, S, P]) UnmarshalJSON(bz []byte) error {
 }
 
 // IsSigned returns true if the extrinsic is signed.
+//
 //nolint:revive
 func (e *Extrinsic[A, S, P]) IsSigned() bool {
 	return e.Version&types.ExtrinsicBitSigned == types.ExtrinsicBitSigned
 }
 
 // Type returns the raw transaction version.
+//
 //nolint:revive
 func (e *Extrinsic[A, S, P]) Type() uint8 {
 	return e.Version & types.ExtrinsicUnmaskVersion
 }
 
 // Decode decodes the extrinsic based on the data present in the decoder.
+//
 //nolint:revive
 func (e *Extrinsic[A, S, P]) Decode(decoder scale.Decoder) error {
 	// compact length encoding (1, 2, or 4 bytes) (may not be there for Extrinsics older than Jan 11 2019)

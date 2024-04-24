@@ -16,7 +16,7 @@
 
 package types
 
-import "github.com/centrifuge/go-substrate-rpc-client/v4/scale"
+import "github.com/dcnetio/go-substrate-rpc-client/v4/scale"
 
 type ItemMetadata struct {
 	Deposit  U128

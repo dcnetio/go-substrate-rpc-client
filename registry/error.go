@@ -1,6 +1,6 @@
 package registry
 
-import libErr "github.com/centrifuge/go-substrate-rpc-client/v4/error"
+import libErr "github.com/dcnetio/go-substrate-rpc-client/v4/error"
 
 const (
 	ErrRecursiveDecodersResolving            = libErr.Error("recursive decoders resolving")

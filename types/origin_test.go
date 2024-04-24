@@ -19,9 +19,9 @@ package types_test
 import (
 	"testing"
 
-	. "github.com/centrifuge/go-substrate-rpc-client/v4/types"
-	. "github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
-	. "github.com/centrifuge/go-substrate-rpc-client/v4/types/test_utils"
+	. "github.com/dcnetio/go-substrate-rpc-client/v4/types"
+	. "github.com/dcnetio/go-substrate-rpc-client/v4/types/codec"
+	. "github.com/dcnetio/go-substrate-rpc-client/v4/types/test_utils"
 )
 
 // newOrigin creates a new Origin type. This function is not exported by purpose – Origin should be ignored and not be

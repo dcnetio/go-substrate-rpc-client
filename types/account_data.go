@@ -18,7 +18,7 @@ package types
 
 // AccountInfo contains information of an account
 type AccountInfo struct {
-	Nonce       U32
+	Nonce       U64 // Number of transactions this account has sent (nonce) change to U64
 	Consumers   U32
 	Providers   U32
 	Sufficients U32

@@ -19,7 +19,7 @@ package types
 import (
 	"errors"
 
-	"github.com/centrifuge/go-substrate-rpc-client/v4/scale"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/scale"
 )
 
 type Tranche struct {

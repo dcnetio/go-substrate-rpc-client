@@ -19,8 +19,8 @@ package types_test
 import (
 	"testing"
 
-	. "github.com/centrifuge/go-substrate-rpc-client/v4/types"
-	. "github.com/centrifuge/go-substrate-rpc-client/v4/types/test_utils"
+	. "github.com/dcnetio/go-substrate-rpc-client/v4/types"
+	. "github.com/dcnetio/go-substrate-rpc-client/v4/types/test_utils"
 )
 
 var testChainProperties1 = ChainProperties{}

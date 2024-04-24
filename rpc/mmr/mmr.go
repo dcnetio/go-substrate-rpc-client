@@ -19,8 +19,8 @@
 package mmr
 
 import (
-	"github.com/centrifuge/go-substrate-rpc-client/v4/client"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/client"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types"
 )
 
 // MMR exposes methods for retrieval of MMR data

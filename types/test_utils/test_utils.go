@@ -22,8 +22,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/centrifuge/go-substrate-rpc-client/v4/scale"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/scale"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types/codec"
 	fuzz "github.com/google/gofuzz"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/crypto/blake2b"

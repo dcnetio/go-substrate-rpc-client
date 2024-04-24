@@ -32,6 +32,16 @@ type ExtrinsicSignatureV4 struct {
 	Tip       UCompact     // extra via balances::TakeFees (Compact<Balance> where Balance is u128))
 }
 
+// ExtrinsicEthSignatureV4 is the signature type for pallet-ethereum compatibility
+type ExtrinsicEthSignatureV4 struct {
+	Signer    [20]byte
+	Signature EcdsaSignature //MultiSignature //
+	Era       ExtrinsicEra   // extra via system::CheckEra
+	Nonce     UCompact       // extra via system::CheckNonce (Compact<Index> where Index is u32))
+	Tip       UCompact       // extra via balances::TakeFees (Compact<Balance> where Balance is u128))
+	// AssetID   Option[U32]
+}
+
 type SignatureOptions struct {
 	Era                ExtrinsicEra // extra via system::CheckEra
 	Nonce              UCompact     // extra via system::CheckNonce (Compact<Index> where Index is u32)

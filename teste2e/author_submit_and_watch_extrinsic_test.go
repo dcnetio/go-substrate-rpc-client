@@ -21,10 +21,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/centrifuge/go-substrate-rpc-client/v4/rpc/author"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/signature"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/rpc/author"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/signature"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types/codec"
 	"github.com/stretchr/testify/assert"
 )
 

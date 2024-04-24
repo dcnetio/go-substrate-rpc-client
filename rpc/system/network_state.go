@@ -17,7 +17,7 @@
 package system
 
 import (
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types"
 )
 
 // NetworkState retrieves the current state of the network

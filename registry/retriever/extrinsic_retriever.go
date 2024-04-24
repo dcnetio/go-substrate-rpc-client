@@ -1,12 +1,12 @@
 package retriever
 
 import (
-	"github.com/centrifuge/go-substrate-rpc-client/v4/registry"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/registry/exec"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/registry/parser"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/rpc/chain/generic"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/rpc/state"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/registry"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/registry/exec"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/registry/parser"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/rpc/chain/generic"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/rpc/state"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/types"
 )
 
 //nolint:lll

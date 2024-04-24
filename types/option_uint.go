@@ -19,7 +19,7 @@ package types
 import (
 	"math/big"
 
-	"github.com/centrifuge/go-substrate-rpc-client/v4/scale"
+	"github.com/dcnetio/go-substrate-rpc-client/v4/scale"
 )
 
 // OptionU8 is a structure that can store a U8 or a missing value
