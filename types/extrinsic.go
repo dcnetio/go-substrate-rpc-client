@@ -53,6 +53,18 @@ type Extrinsic struct {
 	Method Call
 }
 
+// Extrinsic is a piece of Args bundled into a block that expresses something from the "external" (i.e. off-chain)
+// world. There are, broadly speaking, two types of extrinsic: transactions (which tend to be signed) and
+// inherents (which don't).
+type EthExtrinsic struct {
+	// Version is the encoded version flag (which encodes the raw transaction version and signing information in one byte)
+	Version byte
+	// Signature is the ExtrinsicSignatureV4, it's presence depends on the Version flag
+	Signature ExtrinsicEthSignatureV4
+	// Method is the call this extrinsic wraps
+	Method Call
+}
+
 // NewExtrinsic creates a new Extrinsic from the provided Call
 func NewExtrinsic(c Call) Extrinsic {
 	return Extrinsic{

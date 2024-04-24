@@ -35,7 +35,7 @@ type ExtrinsicSignatureV4 struct {
 // ExtrinsicEthSignatureV4 is the signature type for pallet-ethereum compatibility
 type ExtrinsicEthSignatureV4 struct {
 	Signer    [20]byte
-	Signature EcdsaSignature //MultiSignature //
+	Signature EcdsaSignature // MultiSignature
 	Era       ExtrinsicEra   // extra via system::CheckEra
 	Nonce     UCompact       // extra via system::CheckNonce (Compact<Index> where Index is u32))
 	Tip       UCompact       // extra via balances::TakeFees (Compact<Balance> where Balance is u128))
