@@ -25,6 +25,7 @@ import (
 
 type Author interface {
 	SubmitAndWatchExtrinsic(xt types.Extrinsic) (*ExtrinsicStatusSubscription, error)
+	SubmitAndWatchEthExtrinsic(xt types.EthExtrinsic) (*ExtrinsicStatusSubscription, error)
 	PendingExtrinsics() ([]types.Extrinsic, error)
 	SubmitExtrinsic(xt types.Extrinsic) (types.Hash, error)
 }
