@@ -84,3 +84,33 @@ func (es ExtrinsicEthSignatureV4) Encode(encoder scale.Encoder) error {
 	}
 	return nil
 }
+
+func (es *ExtrinsicEthSignatureV4) Decode(decoder scale.Decoder) error {
+	err := decoder.Decode(&es.Signer)
+	if err != nil {
+		return err
+	}
+	err = decoder.Decode(&es.Signature)
+	if err != nil {
+		return err
+	}
+	err = decoder.Decode(&es.Era)
+	if err != nil {
+		return err
+	}
+	err = decoder.Decode(&es.Nonce)
+	if err != nil {
+		return err
+	}
+	err = decoder.Decode(&es.Tip)
+	if err != nil {
+		return err
+	}
+	if es.AssertSuportflag {
+		err = decoder.Decode(&es.AssetID)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}

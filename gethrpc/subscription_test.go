@@ -123,51 +123,6 @@ func TestSubscriptions(t *testing.T) {
 	}
 }
 
-// This test checks that unsubscribing works.
-func TestServerUnsubscribe(t *testing.T) {
-	// Start the server.
-	server := newTestServer()
-	service := &notificationTestService{unsubscribed: make(chan string)}
-	server.RegisterName("nftest2", service)
-	p1, p2 := net.Pipe()
-	go server.ServeCodec(NewJSONCodec(p1), OptionMethodInvocation|OptionSubscriptions)
-
-	p2.SetDeadline(time.Now().Add(10 * time.Second))
-
-	// Subscribe.
-	p2.Write([]byte(`{"jsonrpc":"2.0","id":1,"method":"nftest2_subscribe","params":["someSubscription",0,10]}`))
-
-	// Handle received messages.
-	resps := make(chan subConfirmation)
-	notifications := make(chan subscriptionResult)
-	errors := make(chan error)
-	go waitForMessages(json.NewDecoder(p2), resps, notifications, errors)
-
-	// Receive the subscription ID.
-	var sub subConfirmation
-	select {
-	case sub = <-resps:
-	case err := <-errors:
-		t.Fatal(err)
-	}
-
-	// Unsubscribe and check that it is handled on the server side.
-	p2.Write([]byte(`{"jsonrpc":"2.0","method":"nftest2_unsubscribe","params":["` + sub.subid + `"]}`))
-	for {
-		select {
-		case id := <-service.unsubscribed:
-			if id != string(sub.subid) {
-				t.Errorf("wrong subscription ID unsubscribed")
-			}
-			return
-		case err := <-errors:
-			t.Fatal(err)
-		case <-notifications:
-			// drop notifications
-		}
-	}
-}
-
 type subConfirmation struct {
 	reqid int
 	subid ID

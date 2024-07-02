@@ -24,5 +24,5 @@ type SignedBlock struct {
 // Block encoded with header and extrinsics
 type Block struct {
 	Header     Header
-	Extrinsics []Extrinsic
+	Extrinsics []EthExtrinsic
 }
